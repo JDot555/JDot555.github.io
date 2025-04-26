@@ -1,71 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord Bots & Tools</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Tabbed Interface Example</title>
+  <style>
+    /* Global styling: light background and sans-serif font */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto;
+    }
+    /* Tab bar: flex container with bottom border */
+    .tab {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 20px;
+    }
+    .tab button {
+      flex: 1;
+      padding: 12px;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    .tab button:hover {
+      background-color: #eee;
+    }
+    .tab button.active {
+      background-color: #fff;
+      border-bottom: 3px solid #4CAF50; /* Accent underline for active tab */
+      font-weight: bold;
+    }
+    /* Tab content sections: hidden by default */
+    .tabcontent {
+      display: none; /* hidden unless activated */
+      animation: fadeEffect 0.5s;
+    }
+    @keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    /* Card style for link items */
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+    }
+    .card a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <!-- Tab buttons -->
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event,'Bots')" id="defaultOpen">Discord Bots</button>
+      <button class="tablinks" onclick="openTab(event,'Tools')">Tools</button>
+      <button class="tablinks" onclick="openTab(event,'Extensions')">Extensions</button>
+    </div>
 
-    <header>
-        <h1>My Discord Stuff</h1>
-        <nav>
-            <ul>
-                <li><a href="#bots">Bots</a></li>
-                <li><a href="#tools">Tools</a></li>
-                <li><a href="#extensions">Extensions</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Tab content: each card is a link in a styled box -->
+    <div id="Bots" class="tabcontent">
+      <div class="card">
+        <a href="https://mee6.xyz" target="_blank">MEE6 – Custom Discord leveling bot</a>
+      </div>
+      <div class="card">
+        <a href="https://dyno.gg" target="_blank">Dyno – Highly customizable moderation bot</a>
+      </div>
+      <div class="card">
+        <a href="https://github.com/CarlBot/CarlBot" target="_blank">Carl-bot – Reaction roles & automoderation</a>
+      </div>
+    </div>
 
-    <main>
-        <section id="bots">
-            <h2>Discord Bots</h2>
-            <div class="item">
-                <h3>Music Bot</h3>
-                <p>A simple music bot for Discord.</p>
-                <a href="#">Invite Bot</a>
-            </div>
-            <div class="item">
-                <h3>Moderation Bot</h3>
-                <p>Helps you manage your server with moderation tools.</p>
-                <a href="#">Invite Bot</a>
-            </div>
-        </section>
+    <div id="Tools" class="tabcontent">
+      <div class="card">
+        <a href="https://discord.com/developers" target="_blank">Discord Developer Portal</a>
+      </div>
+      <div class="card">
+        <a href="https://ifttt.com/discord" target="_blank">IFTTT for Discord – Bot automation</a>
+      </div>
+      <div class="card">
+        <a href="https://statsbot.net/" target="_blank">Stat Bot – Server analytics</a>
+      </div>
+    </div>
 
-        <section id="tools">
-            <h2>Tools</h2>
-            <div class="item">
-                <h3>Emoji Downloader</h3>
-                <p>Download emojis from servers easily.</p>
-                <a href="#">Download Tool</a>
-            </div>
-            <div class="item">
-                <h3>Discord Backup Tool</h3>
-                <p>Save your server settings and channels.</p>
-                <a href="#">Download Tool</a>
-            </div>
-        </section>
+    <div id="Extensions" class="tabcontent">
+      <div class="card">
+        <a href="https://betterdiscord.app/" target="_blank">BetterDiscord – Themes & plugins</a>
+      </div>
+      <div class="card">
+        <a href="https://github.com/powercord-org/powercord" target="_blank">Powercord – Discord client add-ons</a>
+      </div>
+      <div class="card">
+        <a href="https://chrome.google.com/webstore/detail/discord-chatgpt" target="_blank">Discord ChatGPT (Chrome) – AI chat in Discord</a>
+      </div>
+    </div>
+  </div>
 
-        <section id="extensions">
-            <h2>Extensions & Themes</h2>
-            <div class="item">
-                <h3>Dark Theme Plus</h3>
-                <p>A better dark mode for Discord.</p>
-                <a href="#">Get Extension</a>
-            </div>
-            <div class="item">
-                <h3>Minimal Chat Addon</h3>
-                <p>Make Discord's chat cleaner and simpler.</p>
-                <a href="#">Get Addon</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 My Discord Stuff</p>
-    </footer>
-
+  <script>
+    function openTab(evt, name) {
+      // Hide all content
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      // Remove "active" class from all buttons
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      // Show the selected tab and mark the button active
+      document.getElementById(name).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    // Open the default tab on page load
+    document.getElementById("defaultOpen").click();
+  </script>
 </body>
 </html>
