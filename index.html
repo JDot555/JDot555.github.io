@@ -46,21 +46,25 @@
       to {opacity: 1;}
     }
     .card {
+      display: block; /* Make the whole card clickable */
       background-color: #fff;
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
-    }
-    .card a {
-      text-decoration: none;
-      color: #333;
+      text-decoration: none; /* Remove underline */
+      color: #333; /* Text color */
       font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .card:hover {
+      background-color: #f1f1f1; /* Light gray on hover */
     }
     .card p {
       margin-top: 8px;
       color: #666;
       font-size: 14px;
+      font-weight: normal; /* Normal weight for paragraph */
     }
   </style>
 </head>
@@ -73,44 +77,45 @@
       <button class="tablinks" onclick="openTab(event,'Extensions')">Extensions</button>
     </div>
 
-    <!-- Tab content: each card is a link in a styled box -->
+    <!-- Tab content -->
     <div id="Bots" class="tabcontent">
-        <a href="https://jdot.42web.io" target="_blank" class="card">
-          <h3>Content coming soon</h3>
-          <p>A popular bot for leveling, moderation, and custom commands on your Discord server.</p>
-        </a>
+      <a href="https://jdot.42web.io" class="card">
+        <h3>Content coming soon</h3>
+        <p>A popular bot for leveling, moderation, and custom commands on your Discord server.</p>
+      </a>
     </div>
-    
+
     <div id="Tools" class="tabcontent">
-        <a href="https://3dot-viewer.vercel.app" target="_blank" class="card">
-          <h3>3Dot Viewer</h3>
-          <p>A classic 3D Model viewer</p>
-        </a>
+      <a href="https://3dot-viewer.vercel.app" target="_blank" class="card">
+        <h3>3Dot Viewer</h3>
+        <p>A classic 3D Model viewer</p>
+      </a>
     </div>
-    
+
     <div id="Extensions" class="tabcontent">
-      <!-- Add extension cards here later -->
+      <!-- You can add more cards here later -->
     </div>
   </div>
 
   <script>
     function openTab(evt, name) {
-      // Hide all content
       var i, tabcontent, tablinks;
+      // Hide all tab contents
       tabcontent = document.getElementsByClassName("tabcontent");
       for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
       }
-      // Remove "active" class from all buttons
+      // Remove "active" from all tab buttons
       tablinks = document.getElementsByClassName("tablinks");
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
       }
-      // Show the selected tab and mark the button active
+      // Show the selected tab
       document.getElementById(name).style.display = "block";
+      // Add "active" class to the clicked button
       evt.currentTarget.className += " active";
     }
-    // Open the default tab on page load
+    // Click the default tab when page loads
     document.getElementById("defaultOpen").click();
   </script>
 </body>
