@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="script.js" defer>
-        // JavaScript to resize the background dynamically
         function adjustBackground() {
             const body = document.body;
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
-            body.style.backgroundSize = `${windowWidth}px ${windowHeight}px`; // Resize to match window size
+            body.style.backgroundSize = `${windowWidth}px ${windowHeight}px`;
         }
 
-        // Add event listeners
-        window.addEventListener('load', adjustBackground); // Adjust on page load
-        window.addEventListener('resize', adjustBackground); // Adjust on window resize
+        window.addEventListener('load', adjustBackground);
+        window.addEventListener('resize', adjustBackground);
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +17,8 @@
     <style>
         /* General Body Styles */
         body {
-            background: url("Ranibow.png") no-repeat center center fixed;
-            background-size: 100% 100%; /* Initial size to fill window */
+            background: url("https://jdot.42web.io/Web/Images/Ranibow.png") no-repeat center center fixed;
+            background-size: 100% 100%; 
             color: #ffffff;
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -32,24 +29,21 @@
             justify-content: center;
             height: 100vh;
             text-align: center;
-            overflow: hidden; /* Prevent scrollbars due to resizing */
+            overflow: hidden;
         }
 
-        /* Heading Styles */
         h1 {
             font-size: 2.5em;
             text-shadow: 2px 2px 5px #000000;
             margin-bottom: 20px;
         }
 
-        /* Paragraph Styles */
         p {
             font-size: 1.2em;
             margin: 15px 0;
             max-width: 80%;
         }
 
-        /* Button Styles */
         button {
             background-color: #ff9800;
             color: #ffffff;
@@ -66,13 +60,11 @@
             background-color: #e67e22;
         }
 
-        /* Link Styles */
         a {
             text-decoration: none;
             margin: 20px 0;
         }
 
-        /* Center the Installation Instructions */
         .instructions {
             text-align: left;
             background: rgba(0, 0, 0, 0.5);
@@ -84,7 +76,6 @@
             margin: 20px auto;
         }
 
-        /* Ordered List Styles */
         ol {
             font-size: 1.1em;
             margin: 0;
@@ -99,7 +90,7 @@
 <body>
     <h1>Ranibow Theme style for Vectaria</h1>
     <p>Click the button below to download the extension:</p>
-    <a href="Ranibow.crx" download>
+    <a href="https://jdot.42web.io/Web/Extensions/PartyPop.crx" download>
         <button>Download Extension</button>
     </a>
     <div class="instructions">
