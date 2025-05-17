@@ -95,56 +95,76 @@
             text-decoration: none;
             z-index: 1000;
         }
-
+        
         .edge-card {
-            background: rgba(33, 150, 243, 0.9); /* blue */
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a73e8;
+            padding: 10px 15px;
+            border-radius: 12px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
             font-size: 1em;
             font-weight: bold;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-
+        
         .edge-card:hover {
             transform: scale(1.05);
             box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.5);
         }
-
-        .edge-card .badge {
+        
+        .edge-logo {
+            height: 36px;
+            width: 36px;
+            margin-right: 10px;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .edge-card-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .badge {
             background-color: #ff3d00;
             color: white;
-            font-size: 0.7em;
+            font-size: 0.65em;
             padding: 2px 6px;
             border-radius: 12px;
-            margin-right: 8px;
-            vertical-align: middle;
+            margin-bottom: 3px;
+            display: inline-block;
+            align-self: flex-start;
         }
     </style>
 </head>
-<body>
-    <h1>Ranibow Theme style for Vectaria</h1>
-    <p >Click the button below to download the extension:</p>
-    <a href="../Web/Extension/Rainbow.crx" download>
-        <button>Download Extension</button>
-    </a>
-    <div class="instructions">
-        <p>Installation Instructions:</p>
-        <ol>
-            <li>Download the file.</li>
-            <li>Then you will see "Manage" on the top in Opera, click it.</li>
-            <li>Then click "Install" and confirm the installation.</li>
-            <li>Have fun now 🙃.</li>
-        </ol>
-    </div>
-
-    <a href="https://microsoftedge.microsoft.com/addons/detail/rainbow-theme-styler/cglfdbepahmfahamgegeaefofehcaeek" class="edge-card-link">
-        <div class="edge-card">
-            <span class="badge">New</span>
-            <p>Get for Edge</p>
+    <body>
+        <h1>Ranibow Theme style for Vectaria</h1>
+        <p >Click the button below to download the extension:</p>
+        <a href="../Web/Extension/Rainbow.crx" download>
+            <button>Download Extension</button>
+        </a>
+        <div class="instructions">
+            <p>Installation Instructions:</p>
+            <ol>
+                <li>Download the file.</li>
+                <li>Then you will see "Manage" on the top in Opera, click it.</li>
+                <li>Then click "Install" and confirm the installation.</li>
+                <li>Have fun now 🙃.</li>
+            </ol>
         </div>
-    </a>
-
-</body>
+    
+        <a href="https://microsoftedge.microsoft.com/addons/detail/rainbow-theme-styler/cglfdbepahmfahamgegeaefofehcaeek" target="_blank" class="edge-card-link">
+            <div class="edge-card">
+                <img src="../Web/Images/edge-logo.png" alt="Edge Logo" class="edge-logo">
+                <div class="edge-card-text">
+                    <span class="badge">New</span>
+                    <span>Get for Edge</span>
+                </div>
+            </div>
+        </a>
+    </body>
 </html>
